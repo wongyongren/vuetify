@@ -7,7 +7,7 @@
   </v-col>
 
   <v-col justify="center">
-    <v-date-picker v-model="picker"></v-date-picker>
+    <v-date-picker v-model="date"></v-date-picker>
   </v-col>
       
 
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-// export default {
-//   data() {
-//     return {
-//       date: null,
-//     };
-//   },
-// };
+export default {
+  data() {
+    return {
+      date: null,
+    };
+  },
+};
 </script>
 
 <style>

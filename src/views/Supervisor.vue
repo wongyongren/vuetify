@@ -50,6 +50,7 @@ export default {
   border: 3px solid #ddd;
   padding: 10px;
   font-size: 20px;
+  text-align: center;
 }
 .button {
   background-color: grey; /* Green */

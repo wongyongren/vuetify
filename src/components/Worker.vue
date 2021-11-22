@@ -1,16 +1,10 @@
 <template>
   <v-container fluid>
     <v-row align="center">
-      <v-col
-        cols="12"
-        sm="6"
-      >
+      <v-col cols="12" sm="6">
         <v-subheader v-text="'Project Site Name'"></v-subheader>
       </v-col>
-      <v-col
-        cols="12"
-        sm="6"
-      >
+      <v-col cols="12" sm="6">
         <v-select
           v-model="select"
           :items="selectOption"
@@ -21,17 +15,11 @@
         ></v-select>
       </v-col>
 
-      <v-col
-        cols="12"
-        sm="6"
-      >
+      <v-col cols="12" sm="6">
         <v-subheader v-text="'Select Worker'"></v-subheader>
       </v-col>
 
-      <v-col
-        cols="12"
-        sm="6"
-      >
+      <v-col cols="12" sm="6">
         <v-select
           v-model="multiValue"
           :items="items"
