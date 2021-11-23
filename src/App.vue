@@ -1,7 +1,7 @@
 <template>
-  <v-app >
-  <router-view/>
-    </v-app>
+  <v-app>
+    <router-view />
+  </v-app>
 </template>
 
 <style>
@@ -26,7 +26,7 @@
   color: #42b983;
 }
 
-.col{
+.col {
   padding: 10px;
 }
 </style>

@@ -3,10 +3,10 @@
   <Header />
   <v-container class="container" style="text-align:center;padding:50px">
   <h1>Report Page</h1>
-  
+  <v-container><h2>Date : {{ date.getUTCDate() + "-" +date.getUTCMonth() + "-" +date.getUTCFullYear() }}</h2></v-container>
   <ReportList />
   </v-container>
-  <v-container><h2>Date : {{ date.getUTCDate() + "-" +date.getUTCMonth() + "-" +date.getUTCFullYear() }}</h2></v-container>
+  
 </div>
 </template>
 

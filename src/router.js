@@ -10,33 +10,38 @@ Vue.use(VueRouter)
 
 
 const routes = [
-    {
-        path: '/login',
-        name: 'Login',
-        component: Login
-      },
-      {
-        path: '/',
-        name: 'Supervisor',
-        component: Supervisor
-      },
-      {
-        path: '/report',
-        name: 'Report',
-        component: Report
-      }
-      ,
-      {
-        path: '/test',
-        name: 'Test',
-        component: Test
-      }
+  {
+    path: '*',
+    name: 'Supervisor',
+    component: Supervisor
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/supervisor',
+    name: 'Supervisor',
+    component: Supervisor
+  },
+  {
+    path: '/report',
+    name: 'Report',
+    component: Report
+  }
+  ,
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
+  }
 ]
 
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
 
 export default router

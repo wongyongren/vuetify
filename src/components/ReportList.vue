@@ -1,40 +1,44 @@
 <template >
-<div>
-  <table v-for="site in sites" :key="site" id="customers">
-    <tr > <th style="background-color:black" colspan="3">{{ site.location }}</th>
-    </tr>
-    <tr>
-      <th>Worker Name</th>
-      <th>Worker In Time</th>
-      <th>Worker Out Time</th>
-    </tr>
-    <tr v-for="worker in site.worker" :key="worker">
-      <!--time in -->
-      <td v-if="worker.timeIn != null && worker.timeOut == null">
-        {{ worker.name }}
-      </td>
-      <td v-if="worker.timeIn != null && worker.timeOut == null">
-        {{ worker.timeIn }}
-      </td>
-      <td v-if="worker.timeIn != null && worker.timeOut == null">
-        NULL
-      </td>
-      <!--time in & out -->
-        <td v-if="worker.timeOut != null">
-          {{ worker.name }} 
-        </td>
-        <td v-if="worker.timeOut != null">
-          {{ worker.timeIn }}
-        </td>
-        <td v-if="worker.timeOut != null">
-          {{ worker.timeOut }}
-        </td>
-    </tr>
+  <div>
+    <v-simple-table v-for="site in sites" :key="site" id="customers">
+      <thead>
+        <tr>
+          <th style="background-color: black" colspan="3">
+            {{ site.location }}
+          </th>
+        </tr>
+        <tr>
+          <th>Worker Name</th>
+          <th>Worker In Time</th>
+          <th>Worker Out Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="worker in site.worker" :key="worker">
+          <!--time in -->
+          <td v-if="worker.timeIn != null && worker.timeOut == null">
+            {{ worker.name }}
+          </td>
+          <td v-if="worker.timeIn != null && worker.timeOut == null">
+            {{ worker.timeIn }}
+          </td>
+          <td v-if="worker.timeIn != null && worker.timeOut == null">NULL</td>
+          <!--time in & out -->
+          <td v-if="worker.timeOut != null">
+            {{ worker.name }}
+          </td>
+          <td v-if="worker.timeOut != null">
+            {{ worker.timeIn }}
+          </td>
+          <td v-if="worker.timeOut != null">
+            {{ worker.timeOut }}
+          </td>
+        </tr>
+      </tbody>
       <br />
-  </table>
-
-  <v-btn class="button printButton" v-print>Print the entire page</v-btn>
-</div>
+    </v-simple-table>
+    <v-btn class="button printButton" v-print>Print the entire page</v-btn>
+  </div>
 </template>
 
 <script>
@@ -140,7 +144,6 @@ export default {
 #customers th {
   border: 1px solid #ddd;
   padding: 8px;
-  
 }
 
 #customers tr:nth-child(even) {
@@ -158,7 +161,7 @@ export default {
   background-color: green;
   color: white;
 }
-.printButton{
+.printButton {
   border-radius: 4px;
 }
 </style>
