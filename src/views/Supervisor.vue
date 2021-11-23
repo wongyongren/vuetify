@@ -5,8 +5,10 @@
     <v-container>
       <div class="supervisor">
         <h1>Supervisor Page</h1>
-        <DateTime />
+        
         <Worker />
+        <DateTimeIn />
+        <DateTimeOut />
         <br />
         <v-btn
           class="button submitButton"
@@ -21,14 +23,16 @@
 
 <script>
 // @ is an alias to /src
-import DateTime from "@/components/DateTime.vue";
+import DateTimeIn from "@/components/DateTimeIn.vue";
+import DateTimeOut from "@/components/DateTimeOut.vue";
 import Worker from "@/components/Worker.vue";
 import Header from "../components/header.vue";
 
 export default {
   name: "Supervisor",
   components: {
-    DateTime,
+    DateTimeIn,
+    DateTimeOut,
     Worker,
     Header,
   },
