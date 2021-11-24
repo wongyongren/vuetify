@@ -1,6 +1,6 @@
 <template >
-  <div>
-    <v-simple-table v-for="site in sites" :key="site" id="customers">
+  <v-container >
+    <v-simple-table v-for="site in sites" :key="site.location" id="customers" >
       <thead>
         <tr>
           <th style="background-color: black" colspan="3">
@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="worker in site.worker" :key="worker">
+        <tr v-for="worker in site.worker" :key="worker.id">
           <!--time in -->
           <td v-if="worker.timeIn != null && worker.timeOut == null">
             {{ worker.name }}
@@ -38,10 +38,11 @@
       <br />
     </v-simple-table>
     <v-btn class="button printButton" v-print>Print the entire page</v-btn>
-  </div>
+  </v-container>
 </template>
 
 <script>
+
 export default {
   data() {
     return {

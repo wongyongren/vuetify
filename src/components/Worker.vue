@@ -25,7 +25,7 @@
           label="Select"
           multiple
           chips
-          hint="What are the target regions"
+          hint="Select Atleast 1 Worker"
           persistent-hint
         ></v-select>
       </v-col>

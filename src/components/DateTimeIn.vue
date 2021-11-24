@@ -74,6 +74,7 @@ export default {
     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
       .substr(0, 10),
+      time:null,
     menu: false,
     modal: false,
     menu2: false,

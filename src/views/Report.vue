@@ -1,13 +1,26 @@
 <template>
-<div>
-  <Header />
-  <v-container class="container" style="text-align:center;padding:50px">
-  <h1>Report Page</h1>
-  <v-container><h2>Date : {{ date.getUTCDate() + "-" +date.getUTCMonth() + "-" +date.getUTCFullYear() }}</h2></v-container>
-  <ReportList />
-  </v-container>
-  
-</div>
+
+  <div>
+    <Header />
+    <v-col style="text-align: center;">
+      <v-container>
+        <h1>Report Page</h1>
+        <v-col
+          ><h2>
+            Date :
+            {{
+              date.getUTCDate() +
+              "-" +
+              date.getUTCMonth() +
+              "-" +
+              date.getUTCFullYear()
+            }}
+          </h2></v-col
+        ></v-container
+      >
+      <ReportList />
+    </v-col>
+  </div>
 </template>
 
 <script>
@@ -18,7 +31,7 @@ export default {
   name: "Report",
   components: {
     Header,
-    ReportList
+    ReportList,
   },
   data() {
     return {

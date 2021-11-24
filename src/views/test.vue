@@ -1,24 +1,34 @@
-
 <template>
-  <v-card>
+  <div
+  >
+    <v-container class="fill-height">
+      <v-row
+        align="center"
+        justify="center"
+      >
+        <v-btn
+          color="pink"
+          dark
+          @click.stop="drawer = !drawer"
+        >
+          Toggle
+        </v-btn>
+      </v-row>
+    </v-container>
+
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant.sync="mini"
-      permanent
+      absolute
+      temporary
     >
-      <v-list-item class="px-2">
+      <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>John Leider</v-list-item-title>
-
-        <v-btn
-          icon
-          @click.stop="mini = !mini"
-        >
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
+        <v-list-item-content>
+          <v-list-item-title>John Leider</v-list-item-title>
+        </v-list-item-content>
       </v-list-item>
 
       <v-divider></v-divider>
@@ -34,26 +44,27 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title><a v-bind:href = "item.title">{{ item.title }}</a></v-list-item-title>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-card>
+  </div>
 </template>
 
 <script>
   export default {
     data () {
       return {
-        drawer: true,
+        drawer: null,
         items: [
-          { title: 'Supervisor', icon: 'mdi-home-city' },
-          { title: 'Report', icon: 'mdi-account' },
-          { title: 'Login', icon: 'mdi-account-group-outline' },
+          { title: 'Home', icon: 'mdi-view-dashboard' },
+          { title: 'About', icon: 'mdi-forum' },
         ],
-        mini: false,
       }
     },
   }
 </script>
+
+<style>
+</style> 

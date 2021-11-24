@@ -1,11 +1,10 @@
 <template>
   <div data-app>
     <Header />
-    <br />
-    <v-container>
-      <div class="supervisor">
+    <v-col>
+      <v-container class="supervisor">
         <h1>Supervisor Page</h1>
-        
+
         <Worker />
         <DateTimeIn />
         <DateTimeOut />
@@ -16,8 +15,8 @@
           color="cust-secondary"
           >Submit</v-btn
         >
-      </div>
-    </v-container>
+      </v-container>
+    </v-col>
   </div>
 </template>
 
