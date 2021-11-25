@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '*',
+    path: '*' ,
     name: 'Supervisor',
     component: Supervisor
   },
@@ -22,7 +22,7 @@ const routes = [
   },
   {
     path: '/supervisor',
-    name: 'Supervisor',
+    //name: 'Supervisor',
     component: Supervisor
   },
   {

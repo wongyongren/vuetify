@@ -1,168 +1,151 @@
-<template >
-  <v-container >
-    <v-simple-table v-for="site in sites" :key="site.location" id="customers" >
-      <thead>
-        <tr>
-          <th style="background-color: black" colspan="3">
-            {{ site.location }}
-          </th>
-        </tr>
-        <tr>
-          <th>Worker Name</th>
-          <th>Worker In Time</th>
-          <th>Worker Out Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="worker in site.worker" :key="worker.id">
-          <!--time in -->
-          <td v-if="worker.timeIn != null && worker.timeOut == null">
-            {{ worker.name }}
-          </td>
-          <td v-if="worker.timeIn != null && worker.timeOut == null">
-            {{ worker.timeIn }}
-          </td>
-          <td v-if="worker.timeIn != null && worker.timeOut == null">NULL</td>
-          <!--time in & out -->
-          <td v-if="worker.timeOut != null">
-            {{ worker.name }}
-          </td>
-          <td v-if="worker.timeOut != null">
-            {{ worker.timeIn }}
-          </td>
-          <td v-if="worker.timeOut != null">
-            {{ worker.timeOut }}
-          </td>
-        </tr>
-      </tbody>
-      <br />
-    </v-simple-table>
+<template>
+  <v-card>
+    <v-card-title>
+      Report List Time In
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="searchIn"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="headersIn"
+      :items="listIn"
+      :search="searchIn"
+    ></v-data-table>
+    <v-spacer></v-spacer>
+    <v-card-title>
+      Report List Time Out
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="searchOut"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="headersOut"
+      :items="listOut"
+      :search="searchOut"
+    ></v-data-table>
     <v-btn class="button printButton" v-print>Print the entire page</v-btn>
-  </v-container>
+  </v-card>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      sites: [
+      searchIn: "",
+      searchOut: "",
+      headersIn: [
         {
-          location: "Suzhou",
-          worker: [
-            {
-              id: 1,
-              name: "Wong",
-              timeIn: "10:05:15 AM",
-              timeOut: "12:05:15 PM",
-            },
-            {
-              id: 2,
-              name: "ABC",
-              timeIn: "10:05:15 AM",
-              timeOut: null,
-            },
-            {
-              id: 3,
-              name: "Wong",
-              timeIn: "10:05:15 AM",
-              timeOut: null,
-            },
-            {
-              id: 4,
-              name: "ABC",
-              timeIn: "10:05:15 AM",
-              timeOut: "11:05:15 AM",
-            },
-          ],
+          text: "Time In",
+          align: "start",
+          value: "time",
+        },
+        { text: "Project Site", value: "site" },
+        { text: "Worker Name", value: "worker" },
+      ],
+      headersOut: [
+        {
+          text: "Time Out",
+          align: "start",
+          value: "time",
+        },
+        { text: "Project Site", value: "site" },
+        { text: "Worker Name", value: "worker" },
+      ],
+      listIn: [
+        {
+          time: "10:05",
+          site: "Suzhou",
+          worker: "Wong",
         },
         {
-          location: "8 Tier",
-          worker: [
-            {
-              id: 1,
-              name: "Wong",
-              timeIn: "10:05:15 AM",
-              timeOut: null,
-            },
-            {
-              id: 2,
-              name: "ABC",
-              timeIn: "11:35:15 AM",
-              timeOut: "2:30:15 PM",
-            },
-          ],
+          time: "10:06",
+          site: "HQ",
+          worker: "Phone",
         },
         {
-          location: "Apollo",
-          worker: [
-            {
-              id: 1,
-              name: "Wong",
-              timeIn: "123",
-              timeOut: "123",
-            },
-            {
-              id: 2,
-              name: "ABC",
-              timeIn: "123",
-              timeOut: "123",
-            },
-          ],
+          time: "10:07",
+          site: "8 Tier",
+          worker: "Zion",
         },
         {
-          location: "Panda",
-          worker: [
-            {
-              id: 1,
-              name: "Wong",
-              timeIn: "123",
-              timeOut: "123",
-            },
-            {
-              id: 2,
-              name: "ABC",
-              timeIn: "123",
-              timeOut: "123",
-            },
-          ],
+          time: "10:08",
+          site: "Seletar",
+          worker: "A",
+        },
+        {
+          time: "11:05",
+          site: "Suzhou",
+          worker: "B",
+        },
+        {
+          time: "12:05",
+          site: "Seletar",
+          worker: "C",
+        },
+        {
+          time: "09:00",
+          site: "8 Tier",
+          worker: "D",
+        },
+        {
+          time: "10:30",
+          site: "HQ",
+          worker: "E",
+        },
+      ],
+      listOut: [
+        {
+          time: "13:30",
+          site: "Suzhou",
+          worker: "Wong",
+        },
+        {
+          time: "14:30",
+          site: "HQ",
+          worker: "Phone",
+        },
+        {
+          time: "10:07",
+          site: "8 Tier",
+          worker: "Zion",
+        },
+        {
+          time: "10:08",
+          site: "Seletar",
+          worker: "A",
+        },
+        {
+          time: "11:05",
+          site: "Suzhou",
+          worker: "B",
+        },
+        {
+          time: "12:05",
+          site: "Seletar",
+          worker: "C",
+        },
+        {
+          time: "09:05",
+          site: "8 Tier",
+          worker: "D",
+        },
+        {
+          time: "10:30",
+          site: "HQ",
+          worker: "E",
         },
       ],
     };
   },
 };
 </script>
-
-<style>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  padding-bottom: 20px;
-}
-
-#customers td,
-#customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#customers tr:hover {
-  background-color: #ddd;
-}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: green;
-  color: white;
-}
-.printButton {
-  border-radius: 4px;
-}
-</style>
