@@ -1,7 +1,7 @@
 <template>
   <v-row align="center">
     <v-col cols="12" sm="6">
-      <v-subheader v-text="'Select Date & Time'"></v-subheader>
+      <v-card-title v-text="'Select Date & Time'"></v-card-title>
     </v-col>
 
     <v-col cols="12" sm="3" md="3">
@@ -62,7 +62,7 @@
       </v-dialog>
     </v-col>
     <v-col cols="12" sm="6">
-      <v-subheader v-text="'Display Selected Date & Time'"></v-subheader>
+      <v-card-title v-text="'Display Selected Date & Time'"></v-card-title>
     </v-col>
     <v-col cols="12" sm="6"> {{ date }} - {{ time }} </v-col>
   </v-row>

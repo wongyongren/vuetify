@@ -1,8 +1,8 @@
 <template>
-  <v-card>
+  <v-card style="position: unset">
     <v-card-title>
       Report List Time In
-      <v-spacer></v-spacer>
+      <v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
       <v-text-field
         v-model="searchIn"
         append-icon="mdi-magnify"
@@ -19,7 +19,7 @@
     <v-spacer></v-spacer>
     <v-card-title>
       Report List Time Out
-      <v-spacer></v-spacer>
+      <v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
       <v-text-field
         v-model="searchOut"
         append-icon="mdi-magnify"

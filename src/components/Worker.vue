@@ -1,7 +1,7 @@
 <template>
     <v-row align="center">
       <v-col cols="12" sm="6">
-        <v-subheader v-text="'Project Site Name'"></v-subheader>
+        <v-card-title v-text="'Project Site Name'"></v-card-title>
       </v-col>
       <v-col cols="12" sm="6">
         <v-select
@@ -15,7 +15,7 @@
       </v-col>
 
       <v-col cols="12" sm="6">
-        <v-subheader v-text="'Select Worker'"></v-subheader>
+        <v-card-title v-text="'Select Worker'"></v-card-title>
       </v-col>
 
       <v-col cols="12" sm="6">

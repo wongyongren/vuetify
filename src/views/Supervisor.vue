@@ -2,9 +2,10 @@
   <div data-app>
     <Header />
     <v-col>
-      <v-container class="supervisor">
+      
         <h1>Supervisor Page</h1>
-
+        <br/>
+        <v-container class="supervisor">
         <Worker />
         <DateTimeIn />
         <DateTimeOut />

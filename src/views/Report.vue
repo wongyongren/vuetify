@@ -1,8 +1,7 @@
 <template>
-
-  <div>
+  <div data-app>
     <Header />
-    <v-col style="text-align: center;">
+    <v-col style="text-align: center">
       <v-container>
         <h1>Report Page</h1>
         <v-col
@@ -18,7 +17,9 @@
           </h2></v-col
         ></v-container
       >
-      <ReportList />
+      <v-container>
+        <ReportList />
+      </v-container>
     </v-col>
   </div>
 </template>
